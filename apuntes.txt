@@ -67,3 +67,20 @@ Por ultimo, debemos tener en cuenta que podemos renderizar elementos a través d
 Es necesario que le pasemos las props “key={todo.text} text={todo.text}” al componente para que nos muestre un contenido distinto por cada objeto de este array.
 …
 La prop “Key” funciona como un Identificador para objeto del array y es necesaria cuando utilizamos el metodo .map()
+
+
+Clase 6 - Evenctos en React: onClick, onChange
+Los eventos nos sirven para detectar acciones del usuario en interaccioón con nuestra aplicación. Estos eventos en React deben ser con CamelCase onCLick esto es un addEventListener.
+
+Para poder ejecutar estos eventos en React, se deben usar arrow functions con la estructura () => {} de esta manera React entiende y no ejecuta de manera inmediata las funciones.
+
+<input type="search" placeholder="Search..."
+        onChange={(event) => {
+          console.log('Escribiste en el Todo Search')
+          console.log(event)
+          console.log(event.target);
+          console.log(event.target.value);
+        }} />
+Dentro del fragmento de codigo podemos mostrar por consola el evento con las diferentes propiedades que necesitaremos en el buscador o para crear nuevos ToDo’s.
+
+El evento como tal nos muestra la propiedad SyntheticBaseEvent que es contenedor de todas las propiedades del evento, siendo mas sepecifico target que nos muestra el elemento con el cual se esta interactuando y finalmente value que especificamente y en tiempo real nos muestra el valor enviado por el evento.
