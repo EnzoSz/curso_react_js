@@ -8,7 +8,7 @@ function CreateTodoButton() {
       onClick={(event) => {
         console.log("le diste click");
         console.log(event);
-        console.log(event.target);
+        console.log(event.target)
       }}
     >
       +
