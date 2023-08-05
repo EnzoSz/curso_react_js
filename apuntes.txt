@@ -152,3 +152,45 @@ Finalmente enviamos estas props al componente App:
   total={totalTodos} 
 />
 Y listo nos muestra los completados y los totales.
+
+
+
+Clase 9 - Buscando TODO’s
+
+
+Para esta clase utilizaremos estados derivados, por lo tanto definimos una constante:
+
+const searchedTodos = todos.filter(
+  (todo) => {
+    return todo.text.include(searchValue)
+  }
+)
+Aqui lo que hacemos es buscar dentro de los textos de los todos el valor de searchValue creando un nuevo array con las coincidencias.
+
+Luego debemos cambiar el comportamiento de del componente TodoList para que trabaje con el nuevo array, cambiando el defaultTodos con searchedTodos:
+
+<TodoList>
+  {searchedTodos.map(todo => (
+    <TodoItem
+      key={todo.text}
+      text={todo.text}
+      completed={todo.completed}
+    />
+  ))}
+</TodoList>
+Esto ya funciona, pero tiene un detalle no reconoce mayusculas o minusculas de acuerdo como busquemos, asi que lo que haremos es optimizar la busqueda para que del lado de la logica comvierta todo el texto en minusculas:
+
+const searchedTodos = todos.filter(
+  (todo) => {
+    return todo.text.toLowerCase().include(searchValue.toLowerCase())
+  }
+)
+Ahora optimizamos el codigo:
+
+const searchedTodos = todos.filter(
+  (todo) => {
+    const todoText = todo.text.toLowerCase();
+    const searchText = searchValue.toLowerCase();
+    return todoText.includes(searchText);
+  }
+)
