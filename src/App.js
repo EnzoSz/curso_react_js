@@ -4,7 +4,7 @@ import { TodoSearch } from "./components/TodoSearch";
 import { TodoList } from "./components/TodoList";
 import { TodoItem } from "./components/TodoItem";
 import { CreateTodoButton } from "./components/CreateTodoButton";
-
+import './styles/TodoCounter.css'
 const defaultTodos = [
   { text: "cortar cebolla", completed: false },
   { text: "llorar con la llorona", completed: true },
@@ -25,7 +25,20 @@ function App() {
 
     return todoText.includes(searchText);
   });
-  console.log("Los usuarios buscan todos de " + searchValue);
+
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return (
     <>
@@ -37,6 +50,8 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onCompleted={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
