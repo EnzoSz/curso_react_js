@@ -205,3 +205,17 @@ localStorage.setItem(key, value): Agrega un elemento con una clave y un valor al
 localStorage.getItem(key): Recupera el valor de la clave especificada en el almacenamiento local.
 localStorage.removeItem(key): Remueve un elemento del almacenamiento local según su clave.
 localStorage.clear(): Borra todos los elementos del almacenamiento local.
+
+clase 14: 
+
+HOOKS
+Los hooks son funciones que puedes llamar dentro de componentes funcionales para agregar y manipular características de React, como el estado, el ciclo de vida y los efectos secundarios. Los hooks más comunes son useState, useEffect y useContext, pero también puedes crear tus propios hooks personalizados.
+
+Los Hooks son más restrictivos que las funciones regulares. Solo puedes llamar a los Hooks en el primer nivel de tus componentes (u otros Hooks). Si quisieras utilizar useState en una condicional o en un bucle, extrae un nuevo componente y ponlo ahí.
+
+CUSTOM HOOKS
+React viene con varios Hooks integrados como useState, useContext y useEffect. A veces, desearás que haya un Hook para algún propósito más específico: por ejemplo, para obtener datos, para mantener un seguimiento de si un usuario está conectado o para conectarse a una sala de chat. Es posible que no encuentres estos Hooks en React, pero puedes crear tus propios Hooks para las necesidades de tu aplicación.
+
+Permite: compartir logica entre componentes y tener el codigo del componente como tal mucho mas limpio
+Al abstraer usando Hooks nos facilita la lectura del codigo, teniendo las partes que le competen al componente en una seccion y las partes de la funcionalidad del hook en otra diferente.
+Cuando vale la pena implementarlo? Bajo nuestro criterio cuando veamos necesario abstraer una logica.
