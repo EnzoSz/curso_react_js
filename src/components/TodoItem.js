@@ -1,5 +1,5 @@
-import { CompleteIcon } from "./CompleteIcon.js";
-import { DeleteIcon } from "./DeleteIcon.js";
+import { CompleteIcon } from "./CompleteIcon.jsx";
+import { DeleteIcon } from "./DeleteIcon.jsx";
 import React from "react";
 import "../styles/TodoItem.css";
 
