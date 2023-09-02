@@ -18,6 +18,20 @@ function App() {
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
+
+  /* Efectos en React */
+  console.log('Log 1');
+  // React.useEffect( () =>{
+  //   console.log('Looooog 2'); 
+  // })
+  // React.useEffect( () =>{
+  //   console.log('Looooog 2'); 
+  // },[]);
+  React.useEffect( () =>{
+    console.log('Looooog 2'); 
+  },[searchValue]);
+  console.log('Log 3');
+
   const searchedTodos = todos.filter((todo) => {
     const todoText = todo.text.toLowerCase(); //convierto el texto en minisculas
     const searchText = searchValue.toLowerCase();
