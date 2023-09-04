@@ -4,6 +4,16 @@ function useLocalStorage(itemName, initialValue) {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
 
+  // localStorage.removeItem('TODOS_V1')
+// const defaultTodos = [
+//   { text: "cortar cebolla", completed: false },
+//   { text: "llorar con la llorona", completed: true },
+//   { text: "hacer ejercicio", completed: false },
+//   { text: "estudiar programacion", completed: true },
+//   { text: "estudiar analisis matematico", completed: true },
+// ];
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
+
   React.useEffect(() => {
     setTimeout(() => {
       try {

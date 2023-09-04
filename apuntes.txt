@@ -255,3 +255,22 @@ Por ejemplo si tenemos un componente que debe cargar una informacion mediante un
 En cambio, si usamos el efecto podemos encapsular el llamado a la API, para que ocurra al final una vez se ha cargado por primera vez nuestro componente y llame un re-renderizado para que cambie nuestro mensaje temporal de cargando…. por la informacion necesaria.
 
 Ademas al pasarle el Array vacio no haremos nuevos llamados innecesarios a la API
+
+clase N°22:
+
+eact Context es como una nube donde puedes almacenar funcionalidades, estados, datos, etc. Que necesitan ser compartidos entre diferentes componentes de una aplicación. Digamos que existen varios componentes que necesitan acceder a un mismo estado, como por ejemplo, un estado de carga en lugar de pasar estos datos a través de múltiples niveles de componentes, que conducen al Prop Drilling siendo un patrón que puede ser útil en algunas situaciones, pero también puede resultar incómodo y difícil de mantener si hay muchos niveles de componentes intermedios involucrados. Además, puede hacer que el código sea menos legible y más propenso a errores.
+
+Por ello React Context es una buena solución y acceder a ellos fácilmente desde cualquier lugar de la aplicación. Por ello, otra manera de verlo es como una biblioteca compartida. Imagina que trabajas en una empresa y necesitas compartir una biblioteca de recursos (libros, revistas, etc.) con tus compañeros de trabajo. En lugar de pasar los libros de mano en mano entre los compañeros de trabajo, puedes ponerlos todos en una biblioteca compartida en el edificio de la empresa o en englobarlos en un Google Drive, lo que hace que sea más fácil para todos acceder a los recursos que necesitan.
+
+De manera similar, con React Context, puedes guardar datos que necesitan ser compartidos entre diferentes componentes de tu aplicación en una “biblioteca compartida” (el contexto de React), lo que facilita el acceso a estos datos desde cualquier lugar de tu aplicación sin tener que pasarlos manualmente a través de múltiples niveles de componentes.
+
+
+Recién tuve una entrevista con esa información. Es muy importante ver los términos ya que es algo que se ve comúnmente en react:
+
+Prop Drilling: es una paso del desarrollo que ocurre cuando necesitamos obtener datos que están en varias capas en el árbol de componentes React.
+
+Este se ve siempre cuando pasamos props entre hijos, luego ese a otros hijos y así sucesivamente… la solución es usar context:
+
+Context: es un elemento que podemos crear en React para establecer una comunicación directa entre un componente en un nivel muy alto y uno en un nivel mucho más bajo.
+
+Por ende context permite acceder a los valores de forma directa.
